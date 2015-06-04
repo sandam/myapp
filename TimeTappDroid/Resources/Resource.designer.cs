@@ -859,6 +859,12 @@ namespace TimeTappDroid
 			// aapt resource value: 0x7f090016
 			public const int beginning = 2131296278;
 			
+			// aapt resource value: 0x7f090043
+			public const int button1 = 2131296323;
+			
+			// aapt resource value: 0x7f090041
+			public const int checkBox1 = 2131296321;
+			
 			// aapt resource value: 0x7f09002d
 			public const int checkbox = 2131296301;
 			
@@ -877,11 +883,11 @@ namespace TimeTappDroid
 			// aapt resource value: 0x7f090015
 			public const int dropdown = 2131296277;
 			
-			// aapt resource value: 0x7f09003f
-			public const int editText1 = 2131296319;
-			
 			// aapt resource value: 0x7f090040
-			public const int editText2 = 2131296320;
+			public const int editText1 = 2131296320;
+			
+			// aapt resource value: 0x7f09003f
+			public const int editText2 = 2131296319;
 			
 			// aapt resource value: 0x7f090030
 			public const int edit_query = 2131296304;
@@ -996,6 +1002,9 @@ namespace TimeTappDroid
 			
 			// aapt resource value: 0x7f090008
 			public const int tabMode = 2131296264;
+			
+			// aapt resource value: 0x7f090042
+			public const int textView1 = 2131296322;
 			
 			// aapt resource value: 0x7f09002b
 			public const int title = 2131296299;
