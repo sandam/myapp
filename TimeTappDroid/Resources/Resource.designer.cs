@@ -859,11 +859,11 @@ namespace TimeTappDroid
 			// aapt resource value: 0x7f090016
 			public const int beginning = 2131296278;
 			
-			// aapt resource value: 0x7f090043
-			public const int button1 = 2131296323;
+			// aapt resource value: 0x7f090044
+			public const int button1 = 2131296324;
 			
-			// aapt resource value: 0x7f090041
-			public const int checkBox1 = 2131296321;
+			// aapt resource value: 0x7f090045
+			public const int checkBox1 = 2131296325;
 			
 			// aapt resource value: 0x7f09002d
 			public const int checkbox = 2131296301;
@@ -883,11 +883,11 @@ namespace TimeTappDroid
 			// aapt resource value: 0x7f090015
 			public const int dropdown = 2131296277;
 			
-			// aapt resource value: 0x7f090040
-			public const int editText1 = 2131296320;
+			// aapt resource value: 0x7f090042
+			public const int editText1 = 2131296322;
 			
-			// aapt resource value: 0x7f09003f
-			public const int editText2 = 2131296319;
+			// aapt resource value: 0x7f090041
+			public const int editText2 = 2131296321;
 			
 			// aapt resource value: 0x7f090030
 			public const int edit_query = 2131296304;
@@ -900,6 +900,9 @@ namespace TimeTappDroid
 			
 			// aapt resource value: 0x7f09002c
 			public const int expanded_menu = 2131296300;
+			
+			// aapt resource value: 0x7f09003d
+			public const int gridLayout1 = 2131296317;
 			
 			// aapt resource value: 0x7f090000
 			public const int home = 2131296256;
@@ -916,8 +919,11 @@ namespace TimeTappDroid
 			// aapt resource value: 0x7f090027
 			public const int image = 2131296295;
 			
-			// aapt resource value: 0x7f09003e
-			public const int imageView1 = 2131296318;
+			// aapt resource value: 0x7f090040
+			public const int imageView1 = 2131296320;
+			
+			// aapt resource value: 0x7f09003c
+			public const int linearLayout1 = 2131296316;
 			
 			// aapt resource value: 0x7f090006
 			public const int listMode = 2131296262;
@@ -946,11 +952,11 @@ namespace TimeTappDroid
 			// aapt resource value: 0x7f09002f
 			public const int radio = 2131296303;
 			
-			// aapt resource value: 0x7f09003c
-			public const int relativeLayout1 = 2131296316;
+			// aapt resource value: 0x7f09003e
+			public const int relativeLayout1 = 2131296318;
 			
-			// aapt resource value: 0x7f09003d
-			public const int relativeLayout2 = 2131296317;
+			// aapt resource value: 0x7f09003f
+			public const int relativeLayout2 = 2131296319;
 			
 			// aapt resource value: 0x7f090032
 			public const int search_badge = 2131296306;
@@ -1003,8 +1009,11 @@ namespace TimeTappDroid
 			// aapt resource value: 0x7f090008
 			public const int tabMode = 2131296264;
 			
-			// aapt resource value: 0x7f090042
-			public const int textView1 = 2131296322;
+			// aapt resource value: 0x7f090043
+			public const int textView1 = 2131296323;
+			
+			// aapt resource value: 0x7f090046
+			public const int textView2 = 2131296326;
 			
 			// aapt resource value: 0x7f09002b
 			public const int title = 2131296299;
@@ -1123,10 +1132,13 @@ namespace TimeTappDroid
 			public const int abc_simple_decor = 2130903063;
 			
 			// aapt resource value: 0x7f030018
-			public const int Main = 2130903064;
+			public const int Home = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int support_simple_spinner_dropdown_item = 2130903065;
+			public const int Login = 2130903065;
+			
+			// aapt resource value: 0x7f03001a
+			public const int support_simple_spinner_dropdown_item = 2130903066;
 			
 			static Layout()
 			{

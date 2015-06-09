@@ -10,7 +10,7 @@ using Android.OS;
 
 namespace TimeTappDroid
 {
-	[Activity (Label = "TimeTappDroid", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "TimeTappDroid", MainLauncher = true, Icon = "@drawable/icon", Theme = "@android:style/Theme.Black.NoTitleBar.Fullscreen")]
 	public class MainActivity : Activity
 	{
 		
@@ -19,7 +19,7 @@ namespace TimeTappDroid
 			base.OnCreate (bundle);
 
 			// Set our view from the "main" layout resource
-			SetContentView (Resource.Layout.Main);
+			SetContentView (Resource.Layout.Login);
 
 			// Get our button from the layout resource,
 			// and attach an event to it
