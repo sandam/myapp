@@ -70,7 +70,11 @@
     <AndroidResource Include="Resources\drawable-hdpi\logo.png" />
     <AndroidResource Include="Resources\layout\Login.axml" />
     <AndroidResource Include="Resources\layout\Home.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\header.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\bar_icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\trade.png" />
   </ItemGroup>
+  <Import Project="..\TimeTappShared\TimeTappShared.projitems" Label="Shared" Condition="Exists('..\TimeTappShared\TimeTappShared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Assets\Fonts\" />

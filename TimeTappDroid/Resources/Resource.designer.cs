@@ -799,10 +799,19 @@ namespace TimeTappDroid
 			public const int abc_textfield_searchview_right_holo_light = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int Icon = 2130837591;
+			public const int bar_icon = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int logo = 2130837592;
+			public const int header = 2130837592;
+			
+			// aapt resource value: 0x7f020059
+			public const int Icon = 2130837593;
+			
+			// aapt resource value: 0x7f02005a
+			public const int logo = 2130837594;
+			
+			// aapt resource value: 0x7f02005b
+			public const int trade = 2130837595;
 			
 			static Drawable()
 			{
@@ -859,11 +868,8 @@ namespace TimeTappDroid
 			// aapt resource value: 0x7f090016
 			public const int beginning = 2131296278;
 			
-			// aapt resource value: 0x7f090044
-			public const int button1 = 2131296324;
-			
-			// aapt resource value: 0x7f090045
-			public const int checkBox1 = 2131296325;
+			// aapt resource value: 0x7f090049
+			public const int checkBox1 = 2131296329;
 			
 			// aapt resource value: 0x7f09002d
 			public const int checkbox = 2131296301;
@@ -883,11 +889,11 @@ namespace TimeTappDroid
 			// aapt resource value: 0x7f090015
 			public const int dropdown = 2131296277;
 			
-			// aapt resource value: 0x7f090042
-			public const int editText1 = 2131296322;
+			// aapt resource value: 0x7f090047
+			public const int editText1 = 2131296327;
 			
-			// aapt resource value: 0x7f090041
-			public const int editText2 = 2131296321;
+			// aapt resource value: 0x7f090046
+			public const int editText2 = 2131296326;
 			
 			// aapt resource value: 0x7f090030
 			public const int edit_query = 2131296304;
@@ -900,9 +906,6 @@ namespace TimeTappDroid
 			
 			// aapt resource value: 0x7f09002c
 			public const int expanded_menu = 2131296300;
-			
-			// aapt resource value: 0x7f09003d
-			public const int gridLayout1 = 2131296317;
 			
 			// aapt resource value: 0x7f090000
 			public const int home = 2131296256;
@@ -919,8 +922,11 @@ namespace TimeTappDroid
 			// aapt resource value: 0x7f090027
 			public const int image = 2131296295;
 			
-			// aapt resource value: 0x7f090040
-			public const int imageView1 = 2131296320;
+			// aapt resource value: 0x7f09003e
+			public const int imageView1 = 2131296318;
+			
+			// aapt resource value: 0x7f090044
+			public const int imageView2 = 2131296324;
 			
 			// aapt resource value: 0x7f09003c
 			public const int linearLayout1 = 2131296316;
@@ -930,6 +936,9 @@ namespace TimeTappDroid
 			
 			// aapt resource value: 0x7f090029
 			public const int list_item = 2131296297;
+			
+			// aapt resource value: 0x7f090048
+			public const int login = 2131296328;
 			
 			// aapt resource value: 0x7f090018
 			public const int middle = 2131296280;
@@ -952,11 +961,11 @@ namespace TimeTappDroid
 			// aapt resource value: 0x7f09002f
 			public const int radio = 2131296303;
 			
-			// aapt resource value: 0x7f09003e
-			public const int relativeLayout1 = 2131296318;
-			
 			// aapt resource value: 0x7f09003f
-			public const int relativeLayout2 = 2131296319;
+			public const int relativeLayout1 = 2131296319;
+			
+			// aapt resource value: 0x7f090045
+			public const int relativeLayout2 = 2131296325;
 			
 			// aapt resource value: 0x7f090032
 			public const int search_badge = 2131296306;
@@ -1009,11 +1018,20 @@ namespace TimeTappDroid
 			// aapt resource value: 0x7f090008
 			public const int tabMode = 2131296264;
 			
-			// aapt resource value: 0x7f090043
-			public const int textView1 = 2131296323;
+			// aapt resource value: 0x7f090040
+			public const int textView1 = 2131296320;
 			
-			// aapt resource value: 0x7f090046
-			public const int textView2 = 2131296326;
+			// aapt resource value: 0x7f090041
+			public const int textView2 = 2131296321;
+			
+			// aapt resource value: 0x7f090042
+			public const int textView3 = 2131296322;
+			
+			// aapt resource value: 0x7f090043
+			public const int textView4 = 2131296323;
+			
+			// aapt resource value: 0x7f09003d
+			public const int textView5 = 2131296317;
 			
 			// aapt resource value: 0x7f09002b
 			public const int title = 2131296299;
