@@ -10,35 +10,36 @@ using Android.OS;
 
 namespace TimeTappDroid
 {
-	[Activity (Label = "TimeTappDroid", MainLauncher = true, Icon = "@drawable/icon", Theme = "@android:style/Theme.Black.NoTitleBar.Fullscreen")]
+	[Activity (Label = "TimeTappDroid", MainLauncher = true, Icon = "@drawable/icon", Theme = "@android:style/Theme.Black.NoTitleBar")]
 	public class MainActivity : Activity
 	{
-		
-		private Button loginButton;
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 
-			loginButton = (Button)FindViewById(Resource.Id.login);
-			loginButton.Click += new EventHandler(login_Click);
-			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Login);
 
-			// Get our button from the layout resource,
-			// and attach an event to it
-			//Button button = FindViewById<Button> (Resource.Id.myButton);
-		
-			}
+			Button loginButton = (Button)FindViewById(Resource.Id.login);
+			loginButton.Click += (sender, e) => {
 
-		void login_Click(object sender, EventArgs e)
-		{
-			SetContentView (Resource.Layout.Home);
+				var intent = new Intent(this, typeof(HomeActivity));
+				//intent.PutStringArrayListExtra("phone_numbers", _phoneNumbers);
+				StartActivity(intent);
+				//string url = "http://api.geonames.org/findNearByWeatherJSON?lat=" +
+				//latitude.Text +
+				//	"&lng=" +
+				//	longitude.Text +
+				//	"&username=demo";
+
+				// Fetch the weather information asynchronously, parse the results,
+				// then update the screen:
+				//JsonValue json = await FetchWeatherAsync (url);
+				//ParseAndDisplay (json);
+
+			};
+						
 		}
-
-
-
-			
 }
 }
 

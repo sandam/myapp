@@ -32,7 +32,6 @@
         p1:layout_width="220dp"
         p1:layout_height="30dp"
         p1:id="@+id/editText2"
-        p1:text="Password"
         p1:fontFamily="Roboto-Light.ttf"
         p1:layout_marginRight="0.0dp"
         p1:layout_marginTop="398dp"
@@ -46,13 +45,13 @@
         p1:textColor="#ffffffff"
         p1:layout_marginLeft="75dp"
         p1:paddingStart="10dp"
-        p1:phoneNumber="false" />
+        p1:phoneNumber="false"
+        p1:hint="Password" />
     <EditText
         p1:inputType="number"
         p1:layout_width="220dp"
         p1:layout_height="30dp"
         p1:id="@+id/editText1"
-        p1:text="Your phone number +685"
         p1:password="false"
         p1:fontFamily="Roboto-Light.ttf"
         p1:layout_marginRight="0.0dp"
@@ -66,7 +65,8 @@
         p1:background="#ff393939"
         p1:textColor="#ffffffff"
         p1:layout_marginLeft="75dp"
-        p1:paddingStart="10dp" />
+        p1:paddingStart="10dp"
+        p1:hint="Your phone number +685" />
     <TextView
         p1:text="Forgot your password?"
         p1:layout_width="wrap_content"
