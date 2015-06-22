@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace TimeTappDroid
 {
-	[Activity (Label = "HomeActivity", Theme = "@android:style/Theme.Black.NoTitleBar")]			
+	[Activity (Label = "HomeActivity")]			
 	public class HomeActivity : Activity
 	{
 		//ImageView imageOptionTime = (ImageView)FindViewById(Resource.Id.imageViewTime);
@@ -34,6 +34,15 @@ namespace TimeTappDroid
 				PopupMenu menu = new PopupMenu (this, imageOptionTime);
 				menu.MenuInflater.Inflate (Resource.Layout.Home_Menu_ChooseCountry, menu.Menu);
 				menu.Show ();
+			};
+
+			TextView SellTextView = (TextView)FindViewById(Resource.Id.SellTextView);
+			SellTextView.Click += (sender, e) => {
+
+				var intent = new Intent(this, typeof(SellActivity));
+
+				StartActivity(intent);
+
 			};
 		}
 				

@@ -10,7 +10,7 @@ using Android.OS;
 
 namespace TimeTappDroid
 {
-	[Activity (Label = "TimeTappDroid", MainLauncher = true, Icon = "@drawable/icon", Theme = "@android:style/Theme.Black.NoTitleBar")]
+	[Activity (Label = "TimeTappDroid", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
 
