@@ -10,6 +10,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using ActionBarTabsExample;
+using Android.Graphics.Drawables;
+using Android.Graphics;
 
 namespace TimeTappDroid
 {
@@ -18,13 +20,16 @@ namespace TimeTappDroid
 	{
 		protected override void OnCreate (Bundle bundle)
 		{
+			
 			base.OnCreate (bundle);
 
 			SetContentView (Resource.Layout.SellFragment);
 
 			this.ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
 			this.ActionBar.SetDisplayShowTitleEnabled (false);
-			ActionBar.SetDisplayShowHomeEnabled (false);
+			this.ActionBar.SetDisplayShowHomeEnabled (false);
+			this.ActionBar.SetDisplayUseLogoEnabled(false);
+			//SetBackgroundDrawable((new ColorDrawable(Color.Rgb(139, 195, 74))));
 
 			AddTab("Time", 0,  new TimeFragment());
 

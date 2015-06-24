@@ -16,6 +16,7 @@ namespace TimeTappDroid
 
 		protected override void OnCreate (Bundle bundle)
 		{
+			RequestWindowFeature(WindowFeatures.NoTitle);
 			base.OnCreate (bundle);
 
 			SetContentView (Resource.Layout.Login);

@@ -43,10 +43,10 @@
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
     <Reference Include="Xamarin.Android.Support.v4">
-      <HintPath>..\packages\Xamarin.Android.Support.v4.21.0.3.0\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Android.Support.v4.22.2.0.0\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Android.Support.v7.AppCompat">
-      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.20.0.0.2\lib\MonoAndroid10\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.22.2.0.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -57,6 +57,8 @@
     <Compile Include="SellActivity.cs" />
     <Compile Include="TimeFragment.cs" />
     <Compile Include="MoneyFragment.cs" />
+    <Compile Include="TradeActivity.cs" />
+    <Compile Include="DetailActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -84,14 +86,113 @@
     <AndroidResource Include="Resources\layout\Fragment.axml" />
     <AndroidResource Include="Resources\layout\SellFragment.axml" />
     <AndroidResource Include="Resources\layout\Sell.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ab_bottom_solid_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ab_solid_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ab_stacked_solid_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ab_texture_tile_actionbar.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ab_transparent_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\btn_cab_done_default_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\btn_cab_done_focused_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\btn_cab_done_pressed_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\cab_background_bottom_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\cab_background_top_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\list_focused_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\list_pressed_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\menu_dropdown_panel_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\progress_bg_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\progress_primary_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\progress_secondary_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\spinner_ab_default_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\spinner_ab_disabled_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\spinner_ab_focused_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\spinner_ab_pressed_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tab_selected_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tab_selected_focused_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tab_selected_pressed_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tab_unselected_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tab_unselected_focused_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tab_unselected_pressed_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ab_bottom_solid_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ab_solid_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ab_stacked_solid_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ab_texture_tile_actionbar.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ab_transparent_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\btn_cab_done_default_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\btn_cab_done_focused_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\btn_cab_done_pressed_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\cab_background_bottom_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\cab_background_top_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\list_focused_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\list_pressed_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\menu_dropdown_panel_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\progress_bg_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\progress_primary_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\progress_secondary_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_ab_default_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_ab_disabled_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_ab_focused_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_ab_pressed_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tab_selected_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tab_selected_focused_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tab_selected_pressed_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tab_unselected_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tab_unselected_focused_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tab_unselected_pressed_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ab_bottom_solid_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ab_solid_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ab_stacked_solid_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ab_texture_tile_actionbar.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ab_transparent_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\btn_cab_done_default_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\btn_cab_done_focused_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\btn_cab_done_pressed_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\cab_background_bottom_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\cab_background_top_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\list_focused_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\list_pressed_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\menu_dropdown_panel_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\progress_bg_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\progress_primary_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\progress_secondary_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\spinner_ab_default_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\spinner_ab_disabled_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\spinner_ab_focused_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\spinner_ab_pressed_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tab_selected_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tab_selected_focused_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tab_selected_pressed_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tab_unselected_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tab_unselected_focused_actionbar.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tab_unselected_pressed_actionbar.9.png" />
+    <AndroidResource Include="Resources\values\Colors.xml" />
+    <AndroidResource Include="Resources\values\Styles.xml" />
+    <AndroidResource Include="Resources\values-v21\Styles.xml" />
+    <AndroidResource Include="Resources\layout\Trade.axml" />
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\drawable\monkey.jpg" />
+    <AndroidResource Include="Resources\drawable\moon.jpg" />
+    <AndroidResource Include="Resources\menu\action_menu.axml" />
   </ItemGroup>
   <Import Project="..\TimeTappShared\TimeTappShared.projitems" Label="Shared" Condition="Exists('..\TimeTappShared\TimeTappShared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Assets\Fonts\" />
     <Folder Include="Resources\drawable-hdpi\" />
+    <Folder Include="Resources\values-v21\" />
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="Resources\menu\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Fonts\Roboto-Light.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="xamandroidsupportv4-18">
+      <Version>22.2.0.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="xamandroidsupportv7appcompat">
+      <Version>22.2.0.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
 </Project>

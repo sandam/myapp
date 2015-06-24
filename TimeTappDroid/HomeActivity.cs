@@ -22,9 +22,11 @@ namespace TimeTappDroid
 
 		protected override void OnCreate (Bundle bundle)
 		{
+			RequestWindowFeature(WindowFeatures.NoTitle);
 			base.OnCreate (bundle);
 
 			SetContentView (Resource.Layout.Home);
+
 			ImageView imageOptionTime = (ImageView)FindViewById(Resource.Id.imageViewTime);
 			//imageOptionTime.Click += new EventHandler (imageOptionTimeClick);
 			//imageOptionData.Click += new EventHandler (imageOptionDataClick);
@@ -44,6 +46,17 @@ namespace TimeTappDroid
 				StartActivity(intent);
 
 			};
+
+
+			TextView TradeTextView = (TextView)FindViewById(Resource.Id.TradeTextView);
+			TradeTextView.Click += (sender, e) => {
+
+				var intent = new Intent(this, typeof(TradeActivity));
+
+				StartActivity(intent);
+
+			};
+
 		}
 				
 		

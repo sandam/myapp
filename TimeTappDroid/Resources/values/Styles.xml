@@ -1,1 +1,10 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="MyTheme" parent="Theme.AppCompat">
+  <item name="windowActionBar">false</item>
+  <item name="windowNoTitle">true</item>
+  <item name="colorPrimary">#8bc34a</item>
+  </style>
+
+ 
+</resources>
