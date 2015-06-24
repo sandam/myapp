@@ -17,8 +17,8 @@ using Android.Support.V7;
 
 namespace TimeTappDroid
 {
-	[Activity (Label = "Sell", Theme="@style/MyTheme")]
-	public class SellActivity : ActionBarActivity
+	[Activity (Label = "Buy", Theme="@style/MyTheme")]
+	public class BuyActivity : ActionBarActivity
 	{
 		private Android.Support.V7.Widget.Toolbar v7Toolbar;
 		protected override void OnCreate (Bundle bundle)
@@ -26,16 +26,22 @@ namespace TimeTappDroid
 			base.OnCreate (bundle);
 
 			// Set our view from the "main" layout resource
-			SetContentView (Resource.Layout.Sell);
+			SetContentView (Resource.Layout.Buy);
 
-			v7Toolbar = FindViewById<Android.Support.V7.Widget.Toolbar> (Resource.Id.ToolbarSell);
+			v7Toolbar = FindViewById<Android.Support.V7.Widget.Toolbar> (Resource.Id.ToolbarBuy);
 
 			//Toolbar will now take on default actionbar characteristics
 			SetSupportActionBar (v7Toolbar);
 
-			SupportActionBar.Title = "Sell";
+			SupportActionBar.Title = "Buy";
 
+			FragmentTransaction transaction = FragmentManager.BeginTransaction();
+			SlidingTabsFragment fragment = new SlidingTabsFragment();
+			transaction.Replace(Resource.Id.sample_content_fragment, fragment);
+			transaction.Commit();
 		}
+
+
 
 		/// <Docs>The options menu in which you place your items.</Docs>
 		/// <returns>To be added.</returns>
@@ -56,8 +62,8 @@ namespace TimeTappDroid
 	}
 }
 
-		
 
-	
+
+
 
 

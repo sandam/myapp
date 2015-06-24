@@ -6,7 +6,7 @@
     android:id="@+id/frameLayout"
     android:background="#8bc34a">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/ToolbarSell"
+        android:id="@+id/ToolbarBuy"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:minHeight="?attr/actionBarSize"

@@ -28,9 +28,6 @@ namespace TimeTappDroid
 			SetContentView (Resource.Layout.Home);
 
 			ImageView imageOptionTime = (ImageView)FindViewById(Resource.Id.imageViewTime);
-			//imageOptionTime.Click += new EventHandler (imageOptionTimeClick);
-			//imageOptionData.Click += new EventHandler (imageOptionDataClick);
-			//imageOptionSMS.Click += new EventHandler (imageOptionSMSClick);
 
 			imageOptionTime.Click += (s, arg) => {
 				PopupMenu menu = new PopupMenu (this, imageOptionTime);
@@ -46,12 +43,20 @@ namespace TimeTappDroid
 				StartActivity(intent);
 
 			};
-
-
+				
 			TextView TradeTextView = (TextView)FindViewById(Resource.Id.TradeTextView);
 			TradeTextView.Click += (sender, e) => {
 
 				var intent = new Intent(this, typeof(TradeActivity));
+
+				StartActivity(intent);
+
+			};
+
+			TextView BuyTextView = (TextView)FindViewById(Resource.Id.BuyTextView);
+			BuyTextView.Click += (sender, e) => {
+
+				var intent = new Intent(this, typeof(BuyActivity));
 
 				StartActivity(intent);
 

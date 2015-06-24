@@ -8,7 +8,7 @@ using Android.Support.V7;
 
 namespace TimeTappDroid
 {
-	[Activity (Label = "Support Trade Screen", Theme="@style/MyTheme")]
+	[Activity (Label = "Trade", Theme="@style/MyTheme")]
 	public class TradeActivity : ActionBarActivity
 	{
 		private Android.Support.V7.Widget.Toolbar v7Toolbar;
