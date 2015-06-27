@@ -38,12 +38,9 @@ namespace TimeTappDroid
 
 			public SamplePagerAdapter() : base()
 			{
-				items.Add("Xamarin");
-				items.Add("Android");
-				items.Add("Tutorial");
-				items.Add("Part");
-				items.Add("12");
-				items.Add("Hooray");
+				items.Add("TIME");
+				items.Add("DATA");
+				items.Add("SMS");
 			}
 
 			public override int Count
