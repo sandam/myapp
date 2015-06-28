@@ -15,73 +15,76 @@ using Android.Support.V4.Widget;
 using SupportToolbar = Android.Support.V7.Widget.Toolbar;
 using SupportFragment = Android.Support.V4.App.Fragment;
 using System.Collections.Generic;
+using FabSample.Helpers;
+using FabSample.Activities;
+using Android.Content.Res;
+using FabSample.Fragments;
 
 namespace FabSample
 {
 	[Activity (Label = "TimeTapp")]			
-	public class HomeActivity : ActionBarActivity
+	public class HomeActivity : BaseActivity
 	{
 		private SupportToolbar mToolbar;
-		private ActionBarDrawerToggle mDrawerToggle;
-		private DrawerLayout mDrawerLayout;
-		private ListView mDrawer;
-		private Android.Support.V7.Widget.Toolbar v7Toolbar;
-		private ArrayAdapter mLeftAdapter;
-		private List<string> mLeftDataSet;
 
-		protected override void OnCreate (Bundle bundle)
+		private MyActionBarDrawerToggle drawerToggle;
+		private string drawerTitle;
+		private string title;
+
+		private DrawerLayout drawerLayout;
+		private ListView drawerListView;
+		private static readonly string[] Sections = new[] {
+			"Browse", "Friends", "Profile"
+		};
+
+		protected override int LayoutResource {
+			get {
+				return Resource.Layout.Home;
+			}
+		}
+
+		protected override void OnCreate (Bundle savedInstanceState)
 		{
 			RequestWindowFeature(WindowFeatures.NoTitle);
-			base.OnCreate (bundle);
-			SetContentView (Resource.Layout.Home);
+			base.OnCreate (savedInstanceState);
+//			SetContentView (Resource.Layout.Home);
+			this.title = this.drawerTitle = this.Title;
 
+			this.drawerLayout = this.FindViewById<DrawerLayout> (Resource.Id.drawer_layout);
+			this.drawerListView = this.FindViewById<ListView> (Resource.Id.left_drawer);
 			//toolbar on the home page that's acting like an action bar, theme that is set up is with no actionbar
-			v7Toolbar = FindViewById<Android.Support.V7.Widget.Toolbar> (Resource.Id.ToolbarSell);
-			SetSupportActionBar (v7Toolbar);
-			SupportActionBar.Title = "TimeTapp";
+//			v7Toolbar = FindViewById<Android.Support.V7.Widget.Toolbar> (Resource.Id.ToolbarHome);
+//			SetSupportActionBar (v7Toolbar);
+//			SupportActionBar.Title = "TimeTapp";
+			this.drawerListView.Adapter = new ArrayAdapter<string> (this, Resource.Layout.item_menu, Sections);
+			this.drawerListView.ItemClick += (sender, args) => ListItemClicked (args.Position);
+			this.drawerLayout.SetDrawerShadow (Resource.Drawable.drawer_shadow_dark, (int)GravityFlags.Start);
 
-			mDrawerLayout = FindViewById<Android.Support.V4.Widget.DrawerLayout> (Resource.Id.drawer_layout);
-			mDrawer = FindViewById<ListView>(Resource.Id.left_drawer);
-			mDrawer.Tag = 0;
 
-			mLeftDataSet = new List<string>();
-			mLeftDataSet.Add ("Item 1");
-			mLeftDataSet.Add ("Item 2");
-			mLeftAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mLeftDataSet);
-			mDrawer.Adapter = mLeftAdapter;
-			mDrawer.ItemClick+= MenuListView_ItemClick;
+			this.drawerToggle = new MyActionBarDrawerToggle (this, this.drawerLayout,
+				this.Toolbar,
+				Resource.String.drawer_open,
+				Resource.String.drawer_close);
 
-			mDrawerToggle = new ActionBarDrawerToggle(
-				this, //Host Activity
-				mDrawerLayout, //DrawerLayout
-				Resource.String.openDrawer, //Opened Message
-				Resource.String.closeDrawer //Closed Message
-			);
+			//Display the current fragments title and update the options menu
+			this.drawerToggle.DrawerClosed += (o, args) => {
+				this.SupportActionBar.Title = this.title;
+				this.InvalidateOptionsMenu ();
+			};
 
-			mDrawerLayout.SetDrawerListener(mDrawerToggle);
-			SupportActionBar.SetHomeButtonEnabled(true);
-			SupportActionBar.SetDisplayShowTitleEnabled(true);
-			mDrawerToggle.SyncState();
+			//Display the drawer title and update the options menu
+			this.drawerToggle.DrawerOpened += (o, args) => {
+				this.SupportActionBar.Title = this.drawerTitle;
+				this.InvalidateOptionsMenu ();
+			};
 
-			if (bundle != null)
-			{
-				if (bundle.GetString("DrawerState") == "Opened")
-				{
-					SupportActionBar.SetTitle(Resource.String.openDrawer);
-				}
+			//Set the drawer lister to be the toggle.
+			this.drawerLayout.SetDrawerListener (this.drawerToggle);
 
-				else
-				{
-					SupportActionBar.SetTitle(Resource.String.closeDrawer);
-				}
-			}
-
-			else
-			{
-
-				SupportActionBar.SetTitle(Resource.String.closeDrawer);
-			}
-
+			//if first time you will want to go ahead and click first item.
+//			if (savedInstanceState == null) {
+//				ListItemClicked (0);
+//			}
 		
 			//"toolbar" that actually onclick of an image
 			ImageView imageOptionTime = (ImageView)FindViewById(Resource.Id.imageViewTime);
@@ -136,10 +139,30 @@ namespace FabSample
 
 		}
 
-		void MenuListView_ItemClick (object sender, AdapterView.ItemClickEventArgs e)
+		private void ListItemClicked (int position)
 		{
-			mDrawerLayout.CloseDrawers();
-			mDrawerToggle.SyncState();
+			Android.Support.V4.App.Fragment fragment = null;
+			switch (position) {				
+			case 0:
+				fragment = new BrowseFragment ();
+				break;
+			case 1:
+				fragment = new FriendsFragment ();
+				break;
+			case 2:
+				fragment = new ProfileFragment ();
+				break;
+			}
+
+			if (position == 0 || position == 1 || position == 2) {
+				SupportFragmentManager.BeginTransaction ()
+				.Replace (Resource.Id.content_frame, fragment)
+				.Commit ();
+			}
+
+			this.drawerListView.SetItemChecked (position, true);
+			SupportActionBar.Title = this.title = Sections [position];
+			this.drawerLayout.CloseDrawers();
 		}
 
 
@@ -167,55 +190,40 @@ namespace FabSample
 						}).Create().Show();
 			}
 
-			switch (item.ItemId)
-			{
-
-			case Android.Resource.Id.Home:
-				//The hamburger icon was clicked which means the drawer toggle will handle the event
-
-				mDrawerToggle.OnOptionsItemSelected(item);
+			if (this.drawerToggle.OnOptionsItemSelected (item))
 				return true;
-
-//			case Resource.Id.action_refresh:
-//				//Refresh
-//				return true;
-//
-//			case Resource.Id.action_help:
-//
-//				return true;
-
-			default:
+				
 				return base.OnOptionsItemSelected (item);
 		}
 			
-	}
+	
 
-		protected override void OnSaveInstanceState (Bundle outState)
+		public override bool OnPrepareOptionsMenu (IMenu menu)
 		{
-			if (mDrawerLayout.IsDrawerOpen((int)GravityFlags.Left))
-			{
-				outState.PutString("DrawerState", "Opened");
-			}
 
-			else
-			{
-				outState.PutString("DrawerState", "Closed");
-			}
+			var drawerOpen = this.drawerLayout.IsDrawerOpen((int)GravityFlags.Left);
+			//when open don't show anything
+			for (int i = 0; i < menu.Size (); i++)
+				menu.GetItem (i).SetVisible (!drawerOpen);
 
-			base.OnSaveInstanceState (outState);
+
+			return base.OnPrepareOptionsMenu (menu);
 		}
 
 		protected override void OnPostCreate (Bundle savedInstanceState)
 		{
 			base.OnPostCreate (savedInstanceState);
-			mDrawerToggle.SyncState();
+			this.drawerToggle.SyncState ();
 		}
 
-		public override void OnConfigurationChanged (Android.Content.Res.Configuration newConfig)
+		public override void OnConfigurationChanged (Configuration newConfig)
 		{
 			base.OnConfigurationChanged (newConfig);
-			mDrawerToggle.OnConfigurationChanged(newConfig);
+			this.drawerToggle.OnConfigurationChanged (newConfig);
 		}
+
+
+	
 	}
 
 

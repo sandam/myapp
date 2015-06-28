@@ -68,11 +68,21 @@
     <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
       <HintPath>packages\Xamarin.Android.Support.v7.RecyclerView.22.0.0.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
     </Reference>
+    <Reference Include="com.refractored.monodroidtoolkit">
+      <HintPath>packages\MonoDroid.Toolkit.1.1.0.0\lib\MonoAndroid10\com.refractored.monodroidtoolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.Android.Support.v4">
-      <HintPath>packages\Xamarin.Android.Support.v4.22.1.1.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+      <HintPath>packages\Xamarin.Android.Support.v4.22.2.0.0\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Android.Support.v7.AppCompat">
-      <HintPath>packages\Xamarin.Android.Support.v7.AppCompat.22.1.1.1\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+      <HintPath>packages\Xamarin.Android.Support.v7.AppCompat.22.2.0.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="Refractored.PagerSlidingTabStrip">
+      <HintPath>packages\Refractored.PagerSlidingTabStrip.1.0.9.4\lib\MonoAndroid10\Refractored.PagerSlidingTabStrip.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android.Export" />
+    <Reference Include="Xamarin.Android.Support.v7.CardView">
+      <HintPath>packages\Xamarin.Android.Support.v7.CardView.22.2.0.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.CardView.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -86,7 +96,19 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="TradeActivity.cs" />
     <Compile Include="SellActivity.cs" />
-    <Compile Include="ActionBarDrawerToggle.cs" />
+    <Compile Include="Helpers\ActionBarDrawerToggle.cs" />
+    <Compile Include="BaseActivity.cs" />
+    <Compile Include="Fragments\BrowseFragment.cs" />
+    <Compile Include="FriendActivity.cs" />
+    <Compile Include="Adapters\FriendsAdapter.cs" />
+    <Compile Include="Adapters\MonkeyAdapter.cs" />
+    <Compile Include="Adapters\Util.cs" />
+    <Compile Include="Fragments\FriendsAllFragment.cs" />
+    <Compile Include="Fragments\FriendsFragment.cs" />
+    <Compile Include="Fragments\FriendsRecentActivity.cs" />
+    <Compile Include="Fragments\ProfileFragment.cs" />
+    <Compile Include="Helpers\SquareImageView.cs" />
+    <Compile Include="Models\FriendViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -159,6 +181,24 @@
     <AndroidResource Include="Resources\drawable\trade_icon.png" />
     <AndroidResource Include="Resources\drawable\history_icon.png" />
     <AndroidResource Include="Resources\drawable\sell_icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\drawer_shadow_dark.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\drawer_shadow_light.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_menu_refresh.png" />
+    <AndroidResource Include="Resources\layout\fragment_browse.axml" />
+    <AndroidResource Include="Resources\layout\fragment_friends.axml" />
+    <AndroidResource Include="Resources\layout\fragment_friends_all.axml" />
+    <AndroidResource Include="Resources\layout\fragment_friends_recent.axml" />
+    <AndroidResource Include="Resources\layout\fragment_profile.axml" />
+    <AndroidResource Include="Resources\layout\item_menu.axml" />
+    <AndroidResource Include="Resources\layout\item_monkey.axml" />
+    <AndroidResource Include="Resources\layout\page_friend.axml" />
+    <AndroidResource Include="Resources\layout\toolbar.axml" />
+    <AndroidResource Include="Resources\menu\refresh.axml" />
+    <AndroidResource Include="Resources\Values-land\dimens.xml" />
+    <AndroidResource Include="Resources\Values-land\integers.xml" />
+    <AndroidResource Include="Resources\Values-v21\styles.xml" />
+    <AndroidResource Include="Resources\values\integers.xml" />
+    <AndroidResource Include="Resources\values\dimens.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -168,4 +208,18 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+    <Folder Include="Fragments\" />
+    <Folder Include="Adapters\" />
+    <Folder Include="Models\" />
+    <Folder Include="Resources\Values-land\" />
+    <Folder Include="Resources\Values-v21\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="xamandroidsupportv7cardview">
+      <Version>22.2.0.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
 </Project>

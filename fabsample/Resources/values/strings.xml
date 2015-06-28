@@ -7,6 +7,10 @@
         Floating Action Button, a library port by <a href="http://twitter.com/jamesmontemagno">James Montemagno</a>.<br/>
         <a href=\'https://github.com/jamesmontemagno/FloatingActionButton-for-Xamarin.Android\'>https://github.com/jamesmontemagno/FloatingActionButton-for-Xamarin.Android</a>
     ]]></string>
-    <string name="openDrawer">Drawer Open</string>
-    <string name="closeDrawer">Drawer Closed</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Closed</string>
+    <string-array name="drawer_list">
+    <item>Item 1</item>
+    </string-array>
+    <string name="menu_refresh">Refresh</string>
 </resources>
